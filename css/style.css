@@ -53,6 +53,7 @@ main {
   font-size: 16px;
   line-height: 18px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -168,7 +169,7 @@ main {
 .basket .basket-button {
   position: relative;
   padding-left: 35px;
-
+  cursor: pointer;
 }
 
 .basket-button::before {
@@ -522,12 +523,13 @@ main {
 }
 
 .popup {
-
-}
-
-.send-button {
-  width: 260px;
-  height: 50px;
+  position: fixed;
+  height: 591px;
+  width: 960px;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7); 
+  bottom: 180px;
+  left: 25%;
+  background-color: #ffffff;
 }
 
 .popup h2 {
@@ -535,10 +537,42 @@ main {
   line-height: 45px;
   font-weight: 500;
   color: black;
+  padding-left: 100px;
+  padding-top: 67px;
+  margin: 0;
 }
 
 .popup-form {
+  display: flex;
+  flex-direction: column;
+}
 
+.popup-form input[type="text"],
+.popup-form input[type="email"] {
+  color: #a1a1a1;
+  box-sizing: border-box;
+  width: 360px;
+  padding: 14px 18px;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+}
+
+.popup-input {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  width: 760px;
+  height: 75px;
+  padding-left: 160px;
+  padding-top: 27px;
+}
+
+.popup-input input:hover {
+  border-color: #b4b9bb; 
+}
+
+.popup-input input:focus {
+  border-color: #000000;
 }
 
 .popup-item {
@@ -546,7 +580,65 @@ main {
   line-height: 18px;
   font-weight: bold;
   color: black;
+  padding-left: 42px;
 }
+
+.popup-letter {
+  padding-left: 98px;
+  padding-top: 54px;
+}
+
+textarea {
+  padding-top: 13px;
+  padding-left: 15px;
+  border: 2px solid #d7dcde;
+  border-radius: 3px;
+  width: 760px;
+  resize: none;
+  height: 115px;
+}
+
+textarea::placeholder {
+  color: #a1a1a1;  
+  padding: 14px 13px;
+}
+
+.close-button {
+  position: relative;
+  font-size: 0;
+  opacity: 0.3;
+  background-color: unset;
+}
+
+.close-button::before {
+  content: "";
+  position: absolute;
+  top: -38px;
+  left: 851px;
+  width: 21px;
+  height: 21px;
+  background-image: url("../img/close-cross.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+} 
+
+.close-button:focus,
+.close-button:hover {
+  opacity: 1;
+  background-color: unset;
+}
+
+.close-button:active {
+  opacity: 0.1;
+}
+
+.send-button {
+  width: 260px;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 102px;
+}
+
 
  /*Каталог*/
 .catalog-title {
@@ -817,16 +909,18 @@ main {
 
 .radiobutton-list {
   list-style: none; 
-
 }
 
 .checkbox-container {
   border: none; 
 }
 
-
 .checkbox-list {
   list-style: none; 
+}
+
+.checkbox-item {
+  
 }
 
 .show-button {
